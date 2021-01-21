@@ -6,10 +6,11 @@ class ManageController extends GetxController {
 
   void updateName() {
     name = "개발하는남자";
+    update();
   }
 
   void increaseCount() {
     count++;
-    update();
+    update(["countUpdate"]);
   }
 }

@@ -11,13 +11,19 @@ class PageWithGetx extends StatelessWidget {
     _manageController = Get.find<ManageController>();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Simple State management"),
+        title: GetBuilder<ManageController>(
+          builder: (_) {
+            return Text(
+                "${_manageController.name} : 의 상태관리 ${_manageController.count}");
+          },
+        ),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GetBuilder<ManageController>(
+              id: "countUpdate",
               builder: (_) {
                 return Text(
                     "${_manageController.name} : ${_manageController.count}");
