@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sample_getx/src/user.dart';
 import 'package:get/get.dart';
+import 'package:sample_getx/src/user_controller.dart';
 
 class Home extends StatelessWidget {
   Home({Key key}) : super(key: key);
 
-  Rx<User> user = User(name: "개남", email: "mousai86@gmail.com", age: 22).obs;
-
   @override
   Widget build(BuildContext context) {
+    UserController userController = Get.find(tag: "userController");
     return Scaffold(
       appBar: AppBar(
         title: Text("Rx State Management with Class"),
@@ -19,15 +19,13 @@ class Home extends StatelessWidget {
           children: [
             Obx(() {
               return Text(
-                "${user.value.name} : ${user.value.age} \n ${user.value.email}",
+                "${userController.user.value.name} : ${userController.user.value.age} \n ${userController.user.value.email}",
               );
             }),
             RaisedButton(
               child: Text("change name"),
               onPressed: () {
-                user.update((u) {
-                  u.name = "개발하는남자";
-                });
+                userController.changeUsername("개발하는남자1");
               },
             )
           ],
