@@ -1,37 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sample_getx/src/page/reactive_state_increase.dart';
+import 'package:sample_getx/src/page/stateful_increase.dart';
 
 class Home extends StatelessWidget {
   Home({Key key}) : super(key: key);
-
-  var count = 0.abs();
-
-  void increase() {
-    count++;
-  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("ReactiveState"),
+        title: Text("Stateful vs ReactiveState"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Obx(
-              () => Text(
-                count.toString(),
-                style: TextStyle(
-                  fontSize: 40,
-                ),
-              ),
+            RaisedButton(
+              child: Text("State full Increase"),
+              onPressed: () {
+                Get.to(StatefulIncrease());
+              },
             ),
             RaisedButton(
-              child: Text("더하기"),
-              onPressed: increase,
+              child: Text("reactive state getX Increase"),
+              onPressed: () {
+                Get.to(ReactiveStateIncrease());
+              },
             ),
           ],
         ),
