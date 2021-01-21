@@ -1,33 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:sample_getx/src/manage.dart';
+import 'package:sample_getx/src/page_with_getx.dart';
+import 'package:sample_getx/src/page_with_provider.dart';
 
 class Home extends StatelessWidget {
   Home({Key key}) : super(key: key);
-  ManageController _manageController;
 
   @override
   Widget build(BuildContext context) {
-    _manageController = Get.find<ManageController>();
     return Scaffold(
       appBar: AppBar(
-        title: Text("Simple State management"),
+        title: Text("Provider vs Getx State Management"),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            GetBuilder<ManageController>(
-              builder: (_) {
-                return Text(
-                    "${_manageController.name} : ${_manageController.count}");
-              },
-            ),
             RaisedButton(
-                child: Text("이름바꾸기"), onPressed: _manageController.updateName),
+                child: Text("GetX"),
+                onPressed: () {
+                  Get.to(PageWithGetx());
+                }),
             RaisedButton(
-                child: Text("increase"),
-                onPressed: _manageController.increaseCount),
+                child: Text("Provider"),
+                onPressed: () {
+                  Get.to(PageWithProvider());
+                }),
           ],
         ),
       ),

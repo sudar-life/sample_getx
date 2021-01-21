@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:provider/provider.dart';
+import 'package:sample_getx/src/change_manage.dart';
 import 'package:sample_getx/src/home.dart';
 import 'package:sample_getx/src/manage.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(ChangeNotifierProvider(
+    create: (context) => ChangeManager(),
+    child: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
