@@ -157,4 +157,8 @@ packages:
     source: hosted
     version: "2.1.0-nullsafety.3"
 sdks:
+<<<<<<< HEAD
   dart: ">=2.10.0-110 <2.11.0"
+=======
+  dart: ">=2.8.0 <3.0.0"
+>>>>>>> 6a57ec8c2f5d8e128fd7457711daee7863a86912
