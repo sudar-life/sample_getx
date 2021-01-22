@@ -1,16 +1,10 @@
 # sample_getx
 
-A new Flutter project.
+GetX 학습을 위한 간단 프로젝트 
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+GetX의 기능들을 기존의 기본 Flutter 와 어떻게 다른지 확인 해보는 프로젝트입니다.
+기능에 따라 브런치를 나눠져 있습니다.
+ - dialog : 간단하게 GetX 에서 dialog 를 띄워보고 기존의 showdialog 차이를 살펴 볼 수 있습니다.
+ 
