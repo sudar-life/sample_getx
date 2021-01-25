@@ -38,6 +38,13 @@ class GetViewWithReactive extends GetView<CountControllerWithReactive> {
               controller.increase();
             },
           ),
+          Obx(() => Text(controller.ck.toString())),
+          RaisedButton(
+            child: Text("increase"),
+            onPressed: () {
+              controller.toggle();
+            },
+          ),
         ],
       ),
     );
