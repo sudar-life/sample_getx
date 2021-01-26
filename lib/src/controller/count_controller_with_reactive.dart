@@ -8,6 +8,6 @@ class CountControllerWithReactive extends GetxController {
   }
 
   void toggle() {
-    ck.value = !ck.value;
+    ck(!ck.value);
   }
 }
