@@ -7,6 +7,16 @@ class SimpleStateControllerWithGetx extends GetxController {
     count++;
     update();
   }
+
+  void putNumber(int number) {
+    count = number;
+    update();
+  }
+
+  void incrementForId(String id) {
+    count++;
+    update([id]);
+  }
 }
 
 class SimpleStateControllerWithProvider extends ChangeNotifier {
