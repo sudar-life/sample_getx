@@ -19,16 +19,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: Home(),
-      initialRoute: '/',
-      //기본 route관리
-      routes: {
-        '/': (context) => Home(),
-        '/first': (context) => FirstPage(),
-        '/second': (context) => SecondPage(),
-        '/third': (context) => ThirdPage(),
-      },
-      //getx 라우트 관리
       getPages: [
         GetPage(name: '/', page: () => Home()),
         GetPage(
