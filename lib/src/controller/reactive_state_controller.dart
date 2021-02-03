@@ -1,14 +1,32 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
+class User {
+  String name;
+  int age;
+  User({this.name, this.age});
+}
+
 class ReactiveStateController extends GetxController {
   RxInt count = 0.obs;
+  Rx<User> user = User(name: "개남", age: 25).obs;
+  RxList<String> d = [""].obs;
   void increment() {
     count++;
   }
 
   void putNumber(int number) {
     count(number);
+  }
+
+  void updateName(String nam) {
+    user.update((u) {
+      u.name = nam;
+    });
+  }
+
+  void push() {
+    d.add("1");
   }
 
   @override

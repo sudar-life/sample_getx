@@ -26,7 +26,7 @@ class ReactiveStateManagePage extends StatelessWidget {
               () {
                 print("Count Update");
                 return Text(
-                  "${Get.find<ReactiveStateController>().count}",
+                  "${Get.find<ReactiveStateController>().d.length}",
                   style: TextStyle(fontSize: 50),
                 );
               },
@@ -41,6 +41,12 @@ class ReactiveStateManagePage extends StatelessWidget {
               child: Text("5로 변경", style: TextStyle(fontSize: 30)),
               onPressed: () {
                 Get.find<ReactiveStateController>().putNumber(5);
+              },
+            ),
+            RaisedButton(
+              child: Text("이름변경", style: TextStyle(fontSize: 30)),
+              onPressed: () {
+                Get.find<ReactiveStateController>().push();
               },
             ),
           ],
