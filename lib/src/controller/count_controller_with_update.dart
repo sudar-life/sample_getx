@@ -1,9 +1,9 @@
+import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
 class CountControllerWithUpdate extends GetxController {
-  int count = 0;
+  RxInt count = 0.obs;
   void increase() {
     count++;
-    update();
   }
 }
